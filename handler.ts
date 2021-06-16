@@ -1,6 +1,6 @@
 import { APIGatewayEvent } from "aws-lambda";
 
-module.exports.health = async (event: APIGatewayEvent) => {
+export const health = async (event: APIGatewayEvent) => {
   return {
     statusCode: 200,
     body: JSON.stringify(
