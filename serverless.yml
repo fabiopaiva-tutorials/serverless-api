@@ -1,0 +1,33 @@
+service: serverless-api
+
+frameworkVersion: '2'
+
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  lambdaHashingVersion: '20201221'
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: /hello
+          method: get
+  world:
+    handler: handler.world
+    events:
+      - http:
+          path: /world
+          method: get
+  post:
+    handler: handler.post
+    events:
+      - http:
+          path: /post
+          method: post
+  
+        
+plugins:
+  - serverless-plugin-typescript
