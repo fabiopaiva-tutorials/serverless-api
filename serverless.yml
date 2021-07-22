@@ -12,19 +12,19 @@ functions:
   hello:
     handler: handler.hello
     events:
-      - http:
+      - httpApi:
           path: /hello
           method: get
   world:
     handler: handler.world
     events:
-      - http:
+      - httpApi:
           path: /world
           method: get
   post:
     handler: handler.post
     events:
-      - http:
+      - httpApi:
           path: /post
           method: post
   
