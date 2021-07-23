@@ -2,6 +2,9 @@ import { APIGatewayEvent } from "aws-lambda";
 
 export const hello = async (event: APIGatewayEvent) => ({
   statusCode: 200,
+  headers: {
+    "content-type": "application/json",
+  },
   body: JSON.stringify(
     {
       message: "Hello",
@@ -13,6 +16,9 @@ export const hello = async (event: APIGatewayEvent) => ({
 
 export const world = async (event: APIGatewayEvent) => ({
   statusCode: 200,
+  headers: {
+    "content-type": "application/json",
+  },
   body: JSON.stringify(
     {
       message: "World",
@@ -24,6 +30,9 @@ export const world = async (event: APIGatewayEvent) => ({
 
 export const post = async (event: APIGatewayEvent) => ({
   statusCode: 200,
+  headers: {
+    "content-type": "application/json",
+  },
   body: JSON.stringify(
     {
       message: "Post",
