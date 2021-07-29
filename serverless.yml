@@ -7,6 +7,7 @@ provider:
   name: aws
   runtime: nodejs14.x
   lambdaHashingVersion: '20201221'
+  region: eu-west-1
 
 functions:
   hello:
