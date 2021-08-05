@@ -8,6 +8,14 @@ provider:
   runtime: nodejs14.x
   lambdaHashingVersion: '20201221'
   region: eu-west-1
+  httpApi:
+    authorizers:
+      # JWT authorizer to back HTTP API endpoints
+      auth0:
+        identitySource: $request.header.Authorization
+        issuerUrl: https://fabiopaiva.eu.auth0.com/
+        audience:
+          - serverless-api
 
 functions:
   hello:
@@ -16,18 +24,21 @@ functions:
       - httpApi:
           path: /hello
           method: get
+          authorizer: auth0
   world:
     handler: handler.world
     events:
       - httpApi:
           path: /world
           method: get
+          authorizer: auth0
   post:
     handler: handler.post
     events:
       - httpApi:
           path: /post
           method: post
+          authorizer: auth0
   
         
 plugins:
